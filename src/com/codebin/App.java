@@ -30,24 +30,24 @@ import javax.swing.JFrame;
  * @author Mihail Stoynov, jug.bg
  *
  */
-public class App extends JFrame {
+public class App {
 
-    private static final long serialVersionUID = -8402983606638099877L;
+    /*private static final long serialVersionUID = -8402983606638099877L;
 
-    private final JButton left;
+    private JButton buttonSubmit;
+    private JPanel panelMain;
+    private JTextArea systemInfo;
+    private JTextField systemCommand;
+
+    /*private final JButton left;
     private final JButton right;
     private final JButton up;
     private final JButton down;
-    private final JButton stop;
+    private final JButton stop;*/
 
-    private BufferedWriter pw;
+    /*private BufferedWriter pw; */
 
-/*
-    public class App {
-        private JButton buttonSubmit;
-        private JPanel panelMain;
-        private JTextArea systemInfo;
-        private JTextField systemCommand;
+  /*  public static void main(String[] args) {
 
         public App() {
             buttonSubmit.addActionListener(new ActionListener() {
@@ -57,7 +57,8 @@ public class App extends JFrame {
                 }
             });
         }
-
+    }
+/*
         public static void main(String[] args) {
             JFrame frame = new JFrame("App");
             frame.setContentPane(new App().panelMain);
@@ -68,7 +69,7 @@ public class App extends JFrame {
     }
 */
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         App remote = new App();
         remote.setSize(500, 500);
         remote.setVisible(true);
@@ -257,5 +258,5 @@ public class App extends JFrame {
 
     private void rightPress() {
         sendCommand("RIGHT-PRESS");
-    }
+    } */
 }
