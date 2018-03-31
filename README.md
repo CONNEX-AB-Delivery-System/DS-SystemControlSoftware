@@ -1,9 +1,8 @@
-# Package Handling System / Delivery Truck project with Gradle
+# Package Delivery System / System Control Software project project
 
 ## Why
 
-Test a new technology is always a bit tedious and it requires an amount of time. 
-So, this project try to reduce the curve of learning of any new user with `EV3Dev-lang-java`.
+Explain..
 
 ## Getting Started
 
@@ -39,11 +38,9 @@ You can use the Java IDE to launch the task or execute them from the terminal
 ./gradlew deployAndRun
 ```
 
-# Modify the example
+# Commands
 
-In order to modify the example, current APIs are:
-
-http://ev3dev-lang-java.github.io/docs/api/latest/index.html
+Following commands are available for use in Bricks: 
 
 # Examples
 
