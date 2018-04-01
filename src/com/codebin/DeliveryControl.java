@@ -44,6 +44,7 @@ public class DeliveryControl {
 
 
                 try {
+                    //https://docs.oracle.com/javase/7/docs/api/java/net/Socket.html
                     Socket socket = new Socket(ipAddressDTValue, 19231);
 //			        Socket socket = new Socket("127.0.0.1", 19231);//for mocking
                     pw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));

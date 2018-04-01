@@ -1,4 +1,4 @@
-# Package Delivery System / System Control Software project project
+# Package Delivery System / System Control Software project
 
 ## Why
 
