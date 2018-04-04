@@ -35,6 +35,18 @@ public class DeliveryControl {
     private JButton disconnectDTButton;
     private JLabel runCommandDTLabel;
     private JButton runCommandDTButton;
+    private JButton disconnectCSLTButton;
+    private JButton disconnectFTButton;
+    private JButton runCommandCSLTButton;
+    private JButton runCommandFTButton;
+    private JLabel connectionStatusCSLTLabel;
+    private JLabel connectionStatusFTLabel;
+    private JLabel runCommandCSLTLabel;
+    private JLabel runCommandFTLabel;
+    private JFormattedTextField orderInput;
+    private JLabel SCSLabel;
+    private JLabel orderLabel;
+    private JButton orderButton;
 
     private BufferedWriter pw;
     private BufferedReader pr;
