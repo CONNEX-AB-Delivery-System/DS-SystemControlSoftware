@@ -25,11 +25,23 @@ This section describes commands that trucks will receive and commands that truck
 
 ## FT commands:
 
-"CONTAINER-LOADED" - indicates that all packages has been loaded in container
+"PACKAGES-LOADED" - indicates that all packages has been loaded in container
 
-"PACKAGE-LOADED:RED" - indicates that RED colored package has been loaded in container 
+"PACKAGE-LOADED:RED" - indicates that RED colored package has been loaded in container
+"PACKAGE-LOADED:GREEN" - indicates that RED colored package has been loaded in container
 
+"ERROR" - error
 
+## CSLT commands:
 
+"CONTAINER-LOADED" - indicates that container is loaded on truck
 
+"ERROR" - error
 
+## DT commands:
+
+"LOADING-PLACE" - indicates that Delivery truck has arrived in loading place
+
+"CONTAINER-DELIVERED" - indicates that container has been delivered to location
+
+"ERROR" - error
