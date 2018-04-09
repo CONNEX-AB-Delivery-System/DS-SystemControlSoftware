@@ -76,12 +76,12 @@ public class DeliveryControl {
 
                 try {
                     //https://docs.oracle.com/javase/7/docs/api/java/net/Socket.html
-                    Socket socket = new Socket(ipAddressDTValue, 19231);
+                    Socket socket = new Socket(ipAddressDTValue, 8000);
 //			        Socket socket = new Socket("127.0.0.1", 19231);//for mocking
                     pw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
                     pr = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-                    connectionStatusDTValue = pr.readLine();
+                    //connectionStatusDTValue = pr.readLine();
                 } catch (UnknownHostException exception) {
                     // TODO Auto-generated catch block
                      exception.printStackTrace();
@@ -104,7 +104,7 @@ public class DeliveryControl {
 
                 try {
                     //https://docs.oracle.com/javase/7/docs/api/java/net/Socket.html
-                    Socket socket = new Socket(ipAddressCSLTValue, 19231);
+                    Socket socket = new Socket(ipAddressCSLTValue, 8000);
 //			        Socket socket = new Socket("127.0.0.1", 19231);//for mocking
                     pw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
                     pr = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -162,6 +162,12 @@ public class DeliveryControl {
                         break;
                     case "right":
                         sendCommand("RIGHT-PRESS");
+                        break;
+                    case "exit":
+                        sendCommand("STOP");
+                        break;
+                    case "deliver":
+                        sendCommand("DELIVER");
                         break;
                 }
             }
