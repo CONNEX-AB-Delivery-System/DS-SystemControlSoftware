@@ -14,7 +14,7 @@ software to handle deliveries and manage communication with all trucks.
 Command interface
 This section describes commands that trucks will receive and commands that trucks can send to SCS.
 
-[General rule: all trucks must be autonomous as possible. That means, it must execute received task without additional instructions from SCS]
+[General rule: all trucks must be autonomous as possible. That means, it must execute received task without additional instructions from SCS, except commands provided below.]
 
 
 ## SCS commands:
