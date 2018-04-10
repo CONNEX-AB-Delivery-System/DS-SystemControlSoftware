@@ -7,6 +7,8 @@ import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+import static java.lang.Thread.*;
+
 public class DeliveryControl {
 
     private JPanel panelMain;
@@ -48,8 +50,8 @@ public class DeliveryControl {
     private JLabel orderLabel;
     private JButton orderButton;
 
-    private BufferedWriter pw;
-    private BufferedReader pr;
+    private BufferedWriter pwDT;
+    private BufferedReader prDT;
 
     public DeliveryControl() {
         //set default values
@@ -78,10 +80,12 @@ public class DeliveryControl {
                     //https://docs.oracle.com/javase/7/docs/api/java/net/Socket.html
                     Socket socket = new Socket(ipAddressDTValue, 8000);
 //			        Socket socket = new Socket("127.0.0.1", 19231);//for mocking
-                    pw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-                    pr = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                    pwDT = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+                    prDT = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-                    //connectionStatusDTValue = pr.readLine();
+                    sendCommandDT("connected");
+
+                    connectionStatusDTValue = prDT.readLine();
                 } catch (UnknownHostException exception) {
                     // TODO Auto-generated catch block
                      exception.printStackTrace();
@@ -106,10 +110,10 @@ public class DeliveryControl {
                     //https://docs.oracle.com/javase/7/docs/api/java/net/Socket.html
                     Socket socket = new Socket(ipAddressCSLTValue, 8000);
 //			        Socket socket = new Socket("127.0.0.1", 19231);//for mocking
-                    pw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-                    pr = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                    //pw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+                    //pr = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-                    connectionStatusCSLTValue = pr.readLine();
+                    //connectionStatusCSLTValue = pr.readLine();
                 } catch (UnknownHostException exception) {
                     // TODO Auto-generated catch block
                     exception.printStackTrace();
@@ -134,10 +138,10 @@ public class DeliveryControl {
                     //https://docs.oracle.com/javase/7/docs/api/java/net/Socket.html
                     Socket socket = new Socket(ipAddressFTValue, 19231);
 //			        Socket socket = new Socket("127.0.0.1", 19231);//for mocking
-                    pw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-                    pr = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                    //pw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+                    //pr = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-                    connectionStatusFTValue = pr.readLine();
+                    //connectionStatusFTValue = pr.readLine();
                 } catch (UnknownHostException exception) {
                     // TODO Auto-generated catch block
                     exception.printStackTrace();
@@ -158,16 +162,16 @@ public class DeliveryControl {
 
                 switch (runCommandDTValue) {
                     case "left":
-                        sendCommand("LEFT-PRESS");
+                        sendCommandDT("LEFT-PRESS");
                         break;
                     case "right":
-                        sendCommand("RIGHT-PRESS");
+                        sendCommandDT("RIGHT-PRESS");
                         break;
                     case "exit":
-                        sendCommand("STOP");
+                        sendCommandDT("STOP");
                         break;
                     case "deliver":
-                        sendCommand("DELIVER");
+                        sendCommandDT("DELIVER");
                         break;
                 }
             }
@@ -175,7 +179,7 @@ public class DeliveryControl {
         disconnectDTButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                sendCommand("STOP");
+                sendCommandDT("STOP");
                 connectionStatusDT.setValue("disconnected");
             }
         });
@@ -192,9 +196,9 @@ public class DeliveryControl {
 
     }
 
-    private void sendCommand(String command) {
+    private void sendCommandDT(String command) {
         try {
-            pw.write(command+"\n");pw.flush();
+            pwDT.write(command+"\n");pwDT.flush();
         } catch (IOException e1) {
             e1.printStackTrace();
         }

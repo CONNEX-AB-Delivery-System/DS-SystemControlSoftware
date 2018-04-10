@@ -28,7 +28,7 @@ This section describes commands that trucks will receive and commands that truck
 "PACKAGES-LOADED" - indicates that all packages has been loaded in container
 
 "PACKAGE-LOADED:RED" - indicates that RED colored package has been loaded in container <br />
-"PACKAGE-LOADED:GREEN" - indicates that RED colored package has been loaded in container
+"PACKAGE-LOADED:GREEN" - indicates that GREEN colored package has been loaded in container
 
 "ERROR" - error
 
