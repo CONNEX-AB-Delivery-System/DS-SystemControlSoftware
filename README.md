@@ -17,7 +17,7 @@ This section describes commands that trucks will receive and commands that truck
 [General rule: all trucks must be autonomous as possible. That means, it must execute received task without additional instructions from SCS, except commands provided below.]
 
 
-## SCS commands:
+## System Control Software (SCS) commands:
 
 "ORDER: PACKAGE; PACKAGE: RED; NUMBER: 1” - Order FT to pick up 1 package in RED color and deliver package to container. 
 
@@ -27,7 +27,7 @@ This section describes commands that trucks will receive and commands that truck
 
 “STOP" - halt all movement of truck. 
 
-## FT pre-condition state:
+## Forklift Truck [Package Handling Truck] (FT) pre-condition state:
 
 [Precondition state - FT placed on line, facing in direction of packages]
 
@@ -35,14 +35,14 @@ This section describes commands that trucks will receive and commands that truck
 
 [Postcondition state - FT stops on line, facing in direction of packages]
 
-## FT return commands:
+## Forklift Truck [Package Handling Truck] (FT)  return commands:
 
 Command that must be send to  SCS: 
 "PACKAGE-LOADED: RED" - indicates to SCS that  SCS command "ORDER: PACKAGE; PACKAGE: RED” has been executed and 1 RED colored package has been loaded in container. 
 
 "ERROR" - in any case if task hasn’t been done. 
 
-## CSLT pre-condition state:
+## Container Sorting and Loading Truck (CSLT) pre-condition state:
 
 [Precondition state - CSLT placed on line, facing in direction of container]
 
@@ -50,13 +50,13 @@ Command that must be send to  SCS:
 
 [Postcondition state - FT stops on line, facing in direction of containers] 
 
-## CSLT return commands:
+## Container Sorting and Loading Truck (CSLT) return commands:
 
 "CONTAINER-LOADED: 1” - indicates to SCS that SCS command "ORDER: CONTAINER" has been executed  and  1 container is loaded on DT truck . 
 
 "ERROR" - error
 
-## DT pre-condition state:
+## Delivery Truck (DT) pre-condition state:
 
 [Precondition state - DT placed on line, facing in direction of containers]
 
@@ -64,7 +64,7 @@ Command that must be send to  SCS:
 
 [Postcondition state - DT stops on line, facing in direction of containers] 
 
-## DT return  commands:
+## Delivery Truck (DT) return  commands:
 
 "LOADING-PLACE" - indicates that DT has arrived in designated container loading place. 
 
