@@ -1,6 +1,4 @@
-# Package Delivery System / System Control Software project
-
-## Why
+# Delivery System / System Control Software project
 
 ## About this project
 
@@ -10,8 +8,14 @@ software to handle deliveries and manage communication with all trucks.
 
 ## Getting Started
 
+To develop software you need following things: 
+- Development tools installed as per instructions (IntelliJIDEA and Git/GitHub/SourceTree are must, Gradle is optional).
 
-Command interface
+Steps to run SCS: 
+1) Load source as new project in IntelliJ IDEA
+2) In IntelliJ IDEA, push Run->Run "DeliveryControl" and SCS will start as new program in your computer.
+
+# Command interface
 This section describes commands that trucks will receive and commands that trucks can send to SCS.
 
 [General rule: all trucks must be autonomous as possible. That means, it must execute received task without additional instructions from SCS, except commands provided below.]
@@ -26,6 +30,14 @@ This section describes commands that trucks will receive and commands that truck
 “ORDER: DELIVERY” - Order DT to start driving to destination and deliver container. 
 
 “STOP" - halt all movement of truck. 
+
+## System Control Software (SCS) commands for testing purposes (while developing trucks):
+
+"run" - starts and executes part of the task you developed on Truck
+
+"stop" - stops part of the task you developed on Truck.
+
+"kill" - stops program on Truck.
 
 ## Forklift Truck [Package Handling Truck] (FT) pre-condition state:
 
